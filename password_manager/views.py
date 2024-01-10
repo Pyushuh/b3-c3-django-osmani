@@ -9,7 +9,7 @@ from .forms import SiteForm
 
 def site_list(request):
     sites = Site.objects.all()
-    return render(request, 'password_manager/site_list.html', {'sites': sites})
+    return render(request, 'site_list.html', {'sites': sites})
 
 
 def add_site(request):
@@ -20,7 +20,7 @@ def add_site(request):
             return redirect('site_list')
     else:
         form = SiteForm()
-    return render(request, 'password_manager/add_site.html', {'form': form})
+    return render(request, 'add_site.html', {'form': form})
 
 
 def edit_site(request, site_id):
@@ -32,7 +32,7 @@ def edit_site(request, site_id):
             return redirect('site_list')
     else:
         form = SiteForm(instance=site)
-    return render(request, 'password_manager/edit_site.html', {'form': form, 'site': site})
+    return render(request, 'edit_site.html', {'form': form, 'site': site})
 
 
 def delete_site(request, site_id):

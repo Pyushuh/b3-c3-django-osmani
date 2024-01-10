@@ -1,8 +1,6 @@
-from django.db import models
-
-# Create your models here.
 # password_manager/models.py
 from django.db import models
+from django.urls import reverse
 
 
 class Site(models.Model):
@@ -10,3 +8,6 @@ class Site(models.Model):
     url = models.URLField()
     username = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
+
+    def get_absolute_url(self):
+        return reverse('edit_site', args=[str(self.id)])

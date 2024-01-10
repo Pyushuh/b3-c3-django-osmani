@@ -1,10 +1,19 @@
+<!-- password_manager/templates/password_manager/edit_site.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier le Site</title>
 </head>
 <body>
-
+    <h1>Modifier le Site</h1>
+    <form method="post" action="{% url 'edit_site' site.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Modifier</button>
+    </form>
+    <a href="{% url 'site_list' %}">Retour à la liste des sites</a>
 </body>
 </html>
