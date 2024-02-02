@@ -1,21 +1,21 @@
 {% load static %}
 <!-- password_manager/templates/password_manager/site_list.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des Sites</title>
-    <!-- Ajouter les liens Bootstrap ici -->
     <link rel="stylesheet" href="{% static 'password_manager/css/styles.css' %}">
+
 </head>
-<body class="bg-light">
+<body>
 <div class="container mt-5">
     <h1 class="mb-4">Liste des Sites</h1>
     {% for site in sites %}
         <div class="list-group">
-            <div href="#" class="list-group-item list-group-item-action" aria-current="true">
+            <div class="list-group-item">
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1"><a href="{{ site.url }}" class="mb-1">{{ site.name }}</a></h5>
                     <div>
@@ -26,15 +26,13 @@
                         </form>
                     </div>
                 </div>
-                <p class="mb-1">{{ site.username }}</p>
-                <p class="mb-1">{{ site.password }}</p>
+                <p class="mb-1">Pseudo : {{ site.username }}</p>
+                <p class="mb-1">
+                <p id="id_password">Mot de passe : {{ site.password }}</p>
             </div>
         </div>
     {% endfor %}
     <a href="{% url 'add_site' %}" class="btn btn-primary mt-3">Ajouter un Site</a>
 </div>
-</div>
-
-
 </body>
 </html>

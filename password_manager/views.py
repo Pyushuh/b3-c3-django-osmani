@@ -7,6 +7,11 @@ from .models import Site
 from .forms import SiteForm
 
 
+def base(request):
+    sites = Site.objects.all()
+    return render(request, 'base.html', {'sites': sites})
+
+
 def site_list(request):
     sites = Site.objects.all()
     return render(request, 'site_list.html', {'sites': sites})
