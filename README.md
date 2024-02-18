@@ -23,9 +23,15 @@ Cryptage du mot de passe
 Génération de mots de passe aléatoires
 Dark mode
 
+## Ressenti sur le projet
+C'était assez sympathique à faire, pas trop de galères en dehors du fait que je ne suis pas très familière avec Django, 
+donc c'est plutôt se rappeler comme ça fonctionne avec ce framework et Python en général qui est compliqué, sans 
+mélanger avec les autres technos qu'on est en train d'apprendre. 
+Un peu déçue de pas avoir pu passer plus de temps dessus parce que c'était marrant !
+
 
 ## Commandes Utiles
-Création des migrations:
+Création des migrations :
 ```sh
 python manage.py makemigrations password_manager
 ```
