@@ -1,17 +1,9 @@
+{% extends 'base.html' %}
 {% load static %}
 <!-- password_manager/templates/password_manager/edit_site.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modifier le Site</title>
-    <link rel="stylesheet" href="{% static 'password_manager/css/styles.css' %}">
-</head>
-<body class="bg-light">
+{% block content %}
     <div class="container mt-5">
-        <h1>Modifier le Site</h1>
+        <h2>Modifier le Site</h1>
         <form method="post" action="{% url 'edit_site' site.id %}">
             {% csrf_token %}
 
@@ -27,17 +19,18 @@
 
             <div class="mb-3">
                 <label for="id_username" class="form-label">Pseudo</label>
-                <input type="text" class="form-control" id="id_username" name="username" value="{{ site.username }}" required>
+                <input type="text" class="form-control" id="id_username" name="username" value="{{ site.username }}"
+                       required>
             </div>
 
             <div class="mb-3">
                 <label for="id_password" class="form-label">Mot de passe</label>
-                <input type="password" class="form-control" id="id_password" name="password" value="{{ site.password }}">
+                <input type="password" class="form-control" id="id_password" name="password"
+                       value="{{ site.password }}">
             </div>
 
             <button type="submit" class="btn btn-primary">Modifier</button>
         </form>
         <a href="{% url 'site_list' %}" class="btn btn-secondary mt-3">Retour à la liste des sites</a>
     </div>
-</body>
-</html>
+{% endblock %}

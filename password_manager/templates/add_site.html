@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
-{% block title %}Liste des Sites{% endblock %}
 
 {% block content %}
     <div class="container mt-5">
-        <h1>Ajouter un Site</h1>
+        <h2>Ajouter un Site</h2>
         <form method="post" action="{% url 'add_site' %}">
             {% csrf_token %}
 
