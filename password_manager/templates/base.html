@@ -10,33 +10,40 @@
     <link rel="stylesheet" href="{% static 'password_manager/css/styles.css' %}">
 </head>
 <body>
-    <!-- Ajoutez votre contenu commun ici -->
-    <button id="darkModeToggle" class="btn btn-secondary position-fixed top-0 end-0 m-3">Dark Mode</button>
-    <div class="container mt-5">
-        <h1>Bienvenue sur votre gestionnaire de mots de passe</h1>
-        <!-- Ajoutez des éléments communs à toutes les pages ici -->
-    </div>
+<!-- Ajoutez votre contenu commun ici -->
+<button id="darkModeToggle" class="btn btn-secondary position-fixed top-0 end-0 m-3">Dark Mode</button>
+<div class="container mt-5">
+    <h1>Bienvenue sur votre gestionnaire de mots de passe</h1>
+    <!-- Ajoutez des éléments communs à toutes les pages ici -->
+</div>
 
-    <!-- Ajoutez le bloc de contenu spécifique à chaque page -->
-    <div>
-        {% block content %}{% endblock %}
-    </div>
+<!-- Ajoutez le bloc de contenu spécifique à chaque page -->
+<div>
+    {% block content %}{% endblock %}
+</div>
 
-    <!-- Ajoutez votre pied de page commun ici -->
-    <div>
-        <!-- Ajoutez des éléments communs à toutes les pages ici -->
-    </div>
+<!-- Ajoutez votre pied de page commun ici -->
+<div>
+    <!-- Ajoutez des éléments communs à toutes les pages ici -->
+</div>
 </body>
 <script>
-    document.getElementById('darkModeToggle').addEventListener('click', () => {
-    console.log("oui")
-    const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-    if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-bs-theme', 'light');
-    } else {
-        document.documentElement.setAttribute('data-bs-theme', 'dark');
-    }
-});
-
+    document.addEventListener('DOMContentLoaded', function () {
+        // Récupère le thème sauvegardé en localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-bs-theme', savedTheme);
+        }
+        // Ajoutez l'écouteur d'événement au bouton darkModeToggle
+        document.getElementById('darkModeToggle').addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            // Inverse le thème
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            // Enregistre le thème choisi en localStorage
+            localStorage.setItem('theme', newTheme);
+            // Applique le thème au document
+            document.documentElement.setAttribute('data-bs-theme', newTheme);
+        });
+    });
 </script>
 </html>
