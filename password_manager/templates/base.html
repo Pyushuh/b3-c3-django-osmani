@@ -11,8 +11,8 @@
 </head>
 <body>
 <!-- Ajoutez votre contenu commun ici -->
-<div>
-<button id="darkModeToggle" class="btn btn-secondary position-fixed top-0 end-0 m-3">Dark Mode</button>
+<div class="position-fixed top-0 end-0">
+<button id="darkModeToggle" class="btn btn-secondary m-3">Dark Mode</button>
 {% if user.is_authenticated %}
         <form method="post" action="{% url 'logout' %}" style="display: inline;">
             {% csrf_token %}
