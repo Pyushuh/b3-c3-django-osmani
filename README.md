@@ -18,10 +18,8 @@ Créez une application web de carnet d'adresses. Les utilisateurs pourront s'ins
 - Importer des mots de passe au format csv
 
 ## Bonus
-Authentification des utilisateurs : Permettez aux utilisateurs de s'inscrire, de se connecter et de se déconnecter.
-Cryptage du mot de passe
-Génération de mots de passe aléatoires
-Dark mode
+- Authentification des utilisateurs : Permettez aux utilisateurs de s'inscrire, de se connecter et de se déconnecter.
+- Dark mode
 
 ## Ressenti sur le projet
 C'était assez sympathique à faire, pas trop de galères en dehors du fait que je ne suis pas très familière avec Django, 
